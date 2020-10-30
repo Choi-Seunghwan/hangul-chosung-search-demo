@@ -1,18 +1,23 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <SearchData></SearchData>
+    <SearchBox></SearchBox>
+    <SearchResult></SearchResult>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
+import SearchData from "@/components/SearchData.vue";
+import SearchBox from "@/components/SearchBox.vue";
+import SearchResult from "@/components/SearchResult.vue";
 
 export default Vue.extend({
   name: "Home",
   components: {
-    HelloWorld
-  }
+    SearchData,
+    SearchBox,
+    SearchResult,
+  },
 });
 </script>
