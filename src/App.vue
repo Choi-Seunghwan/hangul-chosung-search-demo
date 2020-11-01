@@ -8,6 +8,7 @@
 </template>
 
 <style lang="scss">
+// https://colorhunt.co/palette/201882
 body {
   background-color: #323639;
   color: #ffffff;
