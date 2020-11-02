@@ -28,7 +28,9 @@ export default Vue.extend({
   methods: {
     ...mapActions({ addSearchData: "addSearchData" }),
     inputEnterHandler(): void {
+      if (!this.inputStr) return;
       this.addSearchData(this.inputStr);
+      this.inputStr = "";
     },
   },
 });
@@ -40,9 +42,10 @@ export default Vue.extend({
   border-radius: 15px;
   padding: 15px;
   background-color: #0f3460;
-  width: 100%;
 
   &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 196px);
     .item {
       &__text {
       }

@@ -5,7 +5,15 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    searchDataList: ["가나다", "하이", "안녕"],
+    searchDataList: [
+      "가나다",
+      "하이",
+      "안녕",
+      "네이버",
+      "쿠팡",
+      "한글",
+      "초성검색",
+    ],
   },
   mutations: {
     addSearchData(state: { searchDataList: string[] }, searchData: string) {

@@ -18,5 +18,8 @@ body {
 #app {
   max-width: 1024px;
   margin: 0 auto;
+  widows: 100%;
+  display: flex;
+  justify-content: center;
 }
 </style>
