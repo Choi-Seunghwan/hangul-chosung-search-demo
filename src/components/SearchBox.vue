@@ -1,15 +1,44 @@
 <template>
   <div class="searchBox">
-    <iunput></iunput>
+    <div class="searchBox__input">
+      <input @keyup="inputStr = $event.target.value" v-model="inputStr" />
+    </div>
+    <div class="searchBox__result">
+      <div v-for="(item, index) in resultList" :key="index" class="resultItem">
+        <div class="item">
+          <span>{{ item }}</span>
+        </div>
+      </div>
+
+      {{ resultList }}
+    </div>
   </div>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from "vue";
+import { mapState } from "vuex";
+import search from "@/utils/search.js";
 export default Vue.extend({
-  name: "HelloWorld",
+  name: "SearchBox",
   props: {
     msg: String,
+  },
+  data() {
+    return {
+      inputStr: "",
+    };
+  },
+  computed: {
+    ...mapState({ searchDataList: "searchDataList" }),
+    resultList() {
+      if (!this.searchDataList) return;
+
+      return this.searchDataList.map((item) => {
+        console.log("result", search(item, this.inputStr));
+        if (search(item, this.inputStr)) return item;
+      });
+    },
   },
 });
 </script>

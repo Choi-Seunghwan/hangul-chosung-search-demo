@@ -8,8 +8,7 @@
     <input @keydown.enter="inputEnterHandler" v-model="inputStr" />
   </div>
 </template>
-
-<script lang="ts">
+<script>
 import Vue from "vue";
 import { mapActions, mapState } from "vuex";
 export default Vue.extend({
@@ -27,7 +26,7 @@ export default Vue.extend({
   },
   methods: {
     ...mapActions({ addSearchData: "addSearchData" }),
-    inputEnterHandler(): void {
+    inputEnterHandler() {
       if (!this.inputStr) return;
       this.addSearchData(this.inputStr);
       this.inputStr = "";
