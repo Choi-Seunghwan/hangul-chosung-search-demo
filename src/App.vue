@@ -8,17 +8,18 @@
 </template>
 
 <style lang="scss">
-// https://colorhunt.co/palette/201882
 body {
-  background-color: #323639;
-  color: #ffffff;
+  background-color: #eeeeee;
+  color: #263646;
   margin: 0;
+  width: 100vw;
+  height: 100vh;
 }
 
 #app {
   max-width: 1024px;
   margin: 0 auto;
-  widows: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
 }
