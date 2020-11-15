@@ -1,17 +1,20 @@
 <template>
   <div class="searchBox">
     <div class="searchBox__input">
-      <div class="inputBox">
+      <div :class="{'inputBox--activated': activated}" class="inputBox">
         <img class="searchImg" src="../assets/search_img.png" />
 
         <input
+          @focus="activated = true"
+          @focusout="activated = false"
           @keyup="inputStr = $event.target.value"
           v-model="inputStr"
+          :placeholder="inputPlaceHolderStr"
           class="inputBox__input"
         />
       </div>
     </div>
-    <div class="searchBox__result">
+    <div :class="{'searchBox__result--show': activated}" class="searchBox__result">
       <div class="resultList">
         <div
           v-for="(item, index) in resultList"
@@ -28,6 +31,7 @@
 <script>
 import Vue from "vue";
 import { mapState } from "vuex";
+import constant from "@/utils/constant.js";
 import search from "@/utils/search.js";
 export default Vue.extend({
   name: "SearchBox",
@@ -38,6 +42,7 @@ export default Vue.extend({
     return {
       inputStr: "",
       activated: false,
+      inputPlaceHolderStr: constant.searchInputPlaceHolder,
     };
   },
   computed: {
@@ -64,12 +69,19 @@ export default Vue.extend({
       position: relative;
       width: 60%;
       max-width: 550px;
-      height: 30px;
+      height: 36px;
       background: #ffffff;
       border-radius: 8px;
       text-align: center;
       display: flex;
       justify-content: center;
+      box-sizing: border-box;
+      border: 2px solid #0f6060;
+
+      &--activated {
+        border-bottom: 0px;
+        border-radius: 8px 8px 0 0;
+      }
 
       @media (max-width: 480px) {
         width: 80%;
@@ -87,30 +99,39 @@ export default Vue.extend({
         font-size: 16px;
         width: 100%;
         margin: 0 40px;
+        padding: 0;
         border: unset;
       }
     }
   }
 
   &__result {
-    display: flex;
     justify-content: center;
+    display: none;
+
+    &--show {
+      display: flex;
+    }
 
     .resultList {
       position: relative;
       width: 60%;
       max-width: 550px;
       background: #ffffff;
+      border: 2px solid #0f6060;
+      border-top: 0px;
       border-radius: 0 0 8px 8px;
-      text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      box-sizing: border-box;
 
       @media (max-width: 480px) {
         width: 80%;
       }
-      .resultItems {
+
+      .resultItem {
+        margin-left: 40px;
       }
     }
   }

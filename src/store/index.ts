@@ -7,7 +7,7 @@ export default new Vuex.Store({
   state: {
     searchDataList: [
       "가나다",
-      "하이",
+      "라마바사",
       "안녕",
       "네이버",
       "쿠팡",

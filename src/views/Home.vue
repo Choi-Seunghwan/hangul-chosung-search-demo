@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     <div class="top">
-      {{ title }}
+      <span class="top__title">
+        {{ title }}
+      </span>
     </div>
     <div class="content">
       <SearchBox></SearchBox>
@@ -37,6 +39,15 @@ export default Vue.extend({
 
   .top {
     height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__title {
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
   }
 }
 </style>
