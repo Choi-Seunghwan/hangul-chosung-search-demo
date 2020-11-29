@@ -1,7 +1,7 @@
 <template>
   <div class="searchBox">
     <div class="searchBox__input">
-      <div :class="{'inputBox--activated': activated}" class="inputBox">
+      <div :class="{ 'inputBox--activated': activated }" class="inputBox">
         <img class="searchImg" src="../assets/search_img.png" />
 
         <input
@@ -14,7 +14,10 @@
         />
       </div>
     </div>
-    <div :class="{'searchBox__result--show': activated}" class="searchBox__result">
+    <div
+      :class="{ 'searchBox__result--show': activated }"
+      class="searchBox__result"
+    >
       <div class="resultList">
         <div
           v-for="(item, index) in resultList"
