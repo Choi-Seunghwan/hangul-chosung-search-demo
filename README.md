@@ -1,24 +1,7 @@
 # hangul-search-example
 
-## Project setup
-```
-yarn install
-```
+### [hangul-chosung-search](https://github.com/Choi-Seunghwan/hangul-chosung-search)
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+### [NPM Module](https://www.npmjs.com/package/hangul-chosung-search)
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+hangul-chosung-search의 예제 사이트입니다. Vue로 개발하였습니다.
