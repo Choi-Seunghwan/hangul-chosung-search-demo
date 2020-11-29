@@ -6,13 +6,18 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     searchDataList: [
+      "한글",
+      "초성검색",
       "가나다",
       "라마바사",
       "안녕",
-      "네이버",
-      "쿠팡",
-      "한글",
-      "초성검색",
+      "말",
+      "닭고기",
+      "벌",
+      "ABC",
+      "DEFG",
+      "Bitcoin",
+      "Ethereum",
     ],
   },
   mutations: {
