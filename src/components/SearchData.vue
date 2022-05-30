@@ -2,10 +2,11 @@
   <div :class="{ 'searchData--activated': toggle }" class="searchData">
     <div class="toggleBtn" @click="toggle = !toggle">{{ showMoreStr }}</div>
     <input
-      @keydown.enter="inputEnterHandler"
-      v-model="inputStr"
+      @keypress.enter="inputEnterHandler"
+      @input="inputHandler"
       :placeholder="inputPlaceholderStr"
       class="input"
+      :value="inputStr"
     />
     <div class="searchData__list">
       <div class="item" v-for="(item, index) in searchDataList" :key="index">
@@ -32,7 +33,6 @@ export default Vue.extend({
     ...mapState({ searchDataList: "searchDataList" }),
   },
   mounted() {
-    console.log(constant);
     return null;
   },
   methods: {
@@ -41,6 +41,9 @@ export default Vue.extend({
       if (!this.inputStr) return;
       this.addSearchData(this.inputStr);
       this.inputStr = "";
+    },
+    inputHandler(e) {
+      this.inputStr = e.target.value;
     },
   },
 });

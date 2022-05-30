@@ -31,7 +31,7 @@ export default Vue.extend({
   },
 });
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 .home {
   position: relative;
   width: 100%;
@@ -49,5 +49,9 @@ export default Vue.extend({
       text-align: center;
     }
   }
+}
+
+input:focus {
+  outline: none;
 }
 </style>
